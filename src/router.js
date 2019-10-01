@@ -1,23 +1,90 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Login from './views/Login'
+import Index from './views/Index'
+import Registrar from './views/Registrar'
+import InformacoeAdicionais from './views/Informacoes'
+import Perfil from './views/Perfil'
+import Compras from './views/Compras'
+import Editar from './views/Editar'
+import Recuperarsenha from './views/Recuperarsenha'
+import Produto from './views/Produto'
+import Notification from './views/Notifications'
+import Cart from './views/Cart'
+import Search from './views/Search'
+import ComprasDescricao from './views/ComprasDescricao'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'index',
+      component: Index
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/login',
+      name: 'login',
+      component: Login,
+      
+    },
+    {
+      path: '/registrar',
+      name: 'registrar',
+      component: Registrar
+    },
+    {
+      path: '/perfil/informacoes',
+      name: 'informacoes',
+      component: InformacoeAdicionais
+    },
+    {
+      path: '/perfil',
+      name: 'perfil',
+      component: Perfil
+    },
+    {
+      path: '/compras',
+      name: 'compras',
+      component: Compras
+    },
+    {
+      path: '/perfil/editar',
+      name: 'editar',
+      component: Editar
+    },
+    {
+      path: '/recuperarsenha',
+      name: 'recuperarsenha',
+      component: Recuperarsenha
+    },
+    {
+      path: '/produto',
+      name: 'produto',
+      component: Produto
+    },
+    {
+      path: '/notifications',
+      name: 'notifications',
+      component: Notification
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
+    {
+      path: '/compras/descricao',
+      name: 'comprasdescricao',
+      component: ComprasDescricao
     }
   ]
 })
