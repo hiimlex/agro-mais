@@ -30,5 +30,6 @@ export default {
 }
 .border-botton-grey{
     border-bottom: 1.4px solid #E0E0E0 !important;
-  }
+}
+
 </style>

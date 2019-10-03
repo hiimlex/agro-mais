@@ -5,7 +5,7 @@
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-botton-transition">
           <v-card>
             <v-app-bar class="border-botton-grey" flat>
-              <v-btn icon text to="/perfil" color="white">
+              <v-btn icon text  color="white" to="/perfil">
                 <v-icon size="28" color="success">arrow_back</v-icon>
               </v-btn>
               <v-toolbar-title class="success--text m-2l font-weight-bold title">Editar Perfil</v-toolbar-title>
@@ -190,7 +190,6 @@ export default {
       endereco: 'Rua José da Penha, 88',
       bairro: 'Seminário',
       cidade: 'Crato',
-
     }
   }
 }

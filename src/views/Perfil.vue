@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import {voltar} from '../services/helpers'
 import BottonNavAgro from './BottonNavAgro'
 export default {
   components:{BottonNavAgro},
@@ -60,11 +61,14 @@ export default {
       nome: 'Nome do cara',
       dialog: true,
       links:[
+        {icon: 'receipt',route: '/compras', text: 'Compras'},
         {icon:'info',route:'/perfil/informacoes',text:'Completar Informações'},
-        {icon: 'receipt',route: '/compras', text: 'Visualizar Compras'},
         {icon:'edit', route: '/perfil/editar', text: 'Editar Perfil'}
       ]
     }
+  },
+  methods:{
+    voltar
   }
 }
 </script>

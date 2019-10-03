@@ -12,7 +12,6 @@ import Produto from './views/Produto'
 import Notification from './views/Notifications'
 import Cart from './views/Cart'
 import Search from './views/Search'
-import ComprasDescricao from './views/ComprasDescricao'
 
 Vue.use(Router)
 
@@ -42,20 +41,22 @@ export default new Router({
       component: InformacoeAdicionais
     },
     {
-      path: '/perfil',
+      path: '/perfil/editar',
+      name: 'editar',
+      component: Editar
+    },
+    {
+      path: '/perfil/:id?',
       name: 'perfil',
-      component: Perfil
+      component: Perfil,
+      
     },
     {
       path: '/compras',
       name: 'compras',
       component: Compras
     },
-    {
-      path: '/perfil/editar',
-      name: 'editar',
-      component: Editar
-    },
+    
     {
       path: '/recuperarsenha',
       name: 'recuperarsenha',
@@ -80,11 +81,6 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search
-    },
-    {
-      path: '/compras/descricao',
-      name: 'comprasdescricao',
-      component: ComprasDescricao
     }
   ]
 })
