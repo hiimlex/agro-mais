@@ -6,13 +6,15 @@
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-botton-transition">
           <v-card class="grey lighten-5">
             <v-app-bar class="border-botton-grey" flat>
-              <v-btn icon text color="white" to="/">
-                <v-icon size="28" color="success">close</v-icon>
+              <v-btn icon text color="white" disabled>
+                <v-icon size="28" color="success"></v-icon>
               </v-btn>
               <div class="flex-grow-1"></div>
               <router-link to="/" class="router-bar"><v-toolbar-title class="logo">Agro+</v-toolbar-title></router-link>
               <div class="flex-grow-1"></div>
-              <v-btn icon text color="white" disabled></v-btn>
+              <v-btn icon text color="white" to="/cart">
+                <v-icon size="28" color="success">local_mall</v-icon>
+              </v-btn>
             </v-app-bar>
             <v-container>
               <div class="text-center">

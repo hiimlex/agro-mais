@@ -20,7 +20,7 @@
         <div class="flex-grow-1"></div>
         <router-link to="/" class="router-bar"><v-toolbar-title class="logo">Agro+</v-toolbar-title></router-link>
         <div class="flex-grow-1"></div>
-        <v-btn icon text color="white">
+        <v-btn icon text color="white" to="/cart">
           <v-icon color="success" size="28">local_mall</v-icon>
         </v-btn>
       </v-app-bar>
