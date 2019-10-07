@@ -4,11 +4,11 @@
       <v-row justify="center">
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-botton-transition">
           <v-card>
-            <v-app-bar class="border-botton-grey" flat>
-              <v-btn icon text color="white" to="/perfil">
-                <v-icon size="28" color="success">arrow_back</v-icon>
+            <v-app-bar color="success" flat>
+              <v-btn icon text color="success" to="/perfil">
+                <v-icon size="28" color="white">arrow_back</v-icon>
               </v-btn>
-              <v-toolbar-title class="success--text m-2l font-weight-bold title">Compras</v-toolbar-title>
+              <v-toolbar-title class="white--text m-2l font-weight-bold title"><b>Compras</b></v-toolbar-title>
             </v-app-bar>
             <v-container>
               <v-expansion-panels>

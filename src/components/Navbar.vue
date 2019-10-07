@@ -81,12 +81,12 @@
         </v-list>
         <v-divider></v-divider>
         <v-list dense>
-          <v-list-item link class="text-center">
+          <v-list-item class="text-center">
             <v-list-item-content>
               <v-list-item-title class="font-weight-bold"><h3>SOBRE</h3></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item link>
+          <v-list-item>
             <v-list-item-content>
               <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus beatae, veniam numquam a impedit quisquam quis odit deleniti dolores ad distinctio repellat! Temporibus ducimus rem ratione sapiente. Commodi, atque?</p>
             </v-list-item-content>

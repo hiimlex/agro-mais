@@ -1,14 +1,14 @@
 <template>
-  <v-container class="my-auto">
+  <v-container class="my-auto" fluid>
     <div class="hidden-sm-and-up">
       <v-row justify="center">
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-botton-transition">
           <v-card class="grey lighten-5">
-            <v-app-bar flat class="border-botton-grey">
-              <v-btn icon text color="white" to="/perfil">
-                <v-icon size="28" color="success">arrow_back</v-icon>
+            <v-app-bar flat color="success">
+              <v-btn icon text color="success" to="/perfil">
+                <v-icon size="28" color="white">arrow_back</v-icon>
               </v-btn>
-              <v-toolbar-title class="success--text m-2l font-weight-bold title">Informações adicionais</v-toolbar-title>
+              <v-toolbar-title class="white--text m-2l font-weight-bold title"><b>Informações Adicionais</b></v-toolbar-title>
             </v-app-bar>
             <v-container >
               <v-stepper v-model="e1">
@@ -127,7 +127,7 @@
                       v-model="contato"
                       label="Contato"
                       color="success"
-                      type="text"
+                      type="number"
                       hint="Digite o número de telefone ou WhatsApp"
                       required
                       ></v-text-field>

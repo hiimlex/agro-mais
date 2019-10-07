@@ -1,7 +1,7 @@
 <template>
   <v-app class="poppins-font bc-white">
     <Navbar/>
-        <v-content class="grey lighten-5">
+        <v-content class="grey lighten-5 justify-content-center">
             <router-view/>
         </v-content>
     <BottonNavAgro/>
