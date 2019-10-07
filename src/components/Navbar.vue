@@ -54,7 +54,31 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <v-divider></v-divider>
+        <v-list>
+          <v-row>
+            <v-col cols="2" class="ml-2">
+              <v-icon right class="mt-n1">eco</v-icon>
+            </v-col>
+            <v-col cols="1"></v-col>
+            <v-col cols="6">
+              <div class="font-weight-medium">Categorias</div>
+            </v-col>
+            <v-col cols="1">
+              <v-btn icon class="mt-n2">
+                <v-icon size="24" @click="show = !show">keyboard_arrow_down</v-icon>
+              </v-btn>
+            </v-col>
+          </v-row>
+          <v-list-item v-show="show === true" v-for="categoria in categorias" :key="categoria.id">
+            <v-list-item-icon>
+            <v-icon right size="20">label</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1">{{categoria.name}}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
         <v-divider></v-divider>
         <v-list dense>
           <v-list-item link class="text-center">
@@ -78,6 +102,7 @@ export default {
   data() {
     return{
     drawer: null,
+    show:null,
     links:[
         {icon:'',text:'Login',route:'/login',id:'perfil'},
         {icon:'',text:'Comprar',route:'/compras', id:'comprar'},
@@ -89,6 +114,13 @@ export default {
       {icon:'person',title:'Entrar',route:'/login'},
       {icon:'person_add',title:'Criar conta',route:'/registrar'},
       {icon:'attach_money', title:'Anunciar', route:'/anunciar'}
+    ],
+    categorias:[
+      {name:'+Classificados',id:1},
+      {name:'+Buscados',id:2},
+      {name:'+Comprados',id:3},
+      {name:'+Recomendados',id:4},
+
     ]
     }
   }

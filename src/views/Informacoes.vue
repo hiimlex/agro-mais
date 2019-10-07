@@ -72,7 +72,7 @@
                       shaped
                       v-model="cpf"
                       label="CPF"
-                      type="text"
+                      type="number"
                       color="success"
                       hint="Digite seu CPF."
                       required
@@ -83,7 +83,7 @@
                       v-model="contato"
                       label="Contato"
                       color="success"
-                      type="text"
+                      type="number"
                       hint="Digite seu número de telefone ou WhatsApp"
                       required
                       ></v-text-field>
@@ -116,7 +116,7 @@
                       shaped
                       v-model="cnpj"
                       label="CNPJ"
-                      type="text"
+                      type="number"
                       color="success"
                       hint="Digite o CNPJ."
                       required
@@ -153,7 +153,7 @@
                       <v-text-field
                       shaped
                       filled
-                      type="text"
+                      type="number"
                       v-model="cep"
                       label="CEP"
                       hint="Ao digitar seu CEP nós iremos preencher automaticamente os dados abaixo, porém você ainda poderá autalizá-los."
@@ -173,6 +173,15 @@
                       shaped
                       filled
                       type="text"
+                      v-model="cidade"
+                      label="Cidade"
+                      color="success"
+                      required
+                      ></v-text-field>
+                      <v-text-field
+                      shaped
+                      filled
+                      type="text"
                       v-model="bairro"
                       label="Bairro"
                       color="success"
@@ -182,12 +191,20 @@
                       shaped
                       filled
                       type="text"
-                      v-model="cidade"
-                      label="Cidade"
+                      v-model="complemento"
+                      label="Complemento"
+                      color="success"
+                      ></v-text-field>
+                      <v-text-field
+                      shaped
+                      filled
+                      type="number"
+                      v-model="numero"
+                      label="Número"
                       color="success"
                       required
                       ></v-text-field>
-                        <v-checkbox v-model="exibir" color="success" label="Deseja exibir endereço durante a compra ?" class="ml-1"></v-checkbox>
+                        <v-checkbox v-model="exibir" color="success" label="Deseja exibir endereço durante a compra ?" class="ml-1 mt-n4"></v-checkbox>
                     </v-form>
                     <v-btn text class="float-left" @click="e1--">Voltar</v-btn>
                     <v-btn
@@ -226,6 +243,8 @@ export default {
         bairro:null,
         cidade:null,
         exibir:false,
+        numero:null,
+        complemento:null
       }
     },
 }
