@@ -28,7 +28,6 @@
       <!-- Sidebar -->
       <v-navigation-drawer
         v-model="drawer"
-        absolute
         temporary
         app
       >

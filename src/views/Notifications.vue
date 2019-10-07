@@ -68,11 +68,11 @@ export default {
       dialog: true,
       notifications:'notifications',
       notify:[
-        {title:'O estoque de bananas do produtor tal voltou!!!',data:'26/09/19',estado:'new'},
-        {title:'Fique ligado nas promoções diárias da loja tal',data:'26/09/19',estado:'new'},
-        {title:'Seu pedido para o produto tal foi aceito!',data:'01/12/19',estado:'new'},
-        {title:'Faça sua primeira compra e ganhe um brinde!',data:'01/12/19',estado:'new'},
-        {title:'Seja bem-vindo a plataforma Agro+',data:'01/12/19',estado:'new'}
+        {title:'O estoque de bananas do produtor tal voltou!!!',data:'26/09/19',estado:'unread'},
+        {title:'Fique ligado nas promoções diárias da loja tal',data:'26/09/19',estado:'unread'},
+        {title:'Seu pedido para o produto tal foi aceito!',data:'01/12/19',estado:'unread'},
+        {title:'Faça sua primeira compra e ganhe um brinde!',data:'01/12/19',estado:'read'},
+        {title:'Seja bem-vindo a plataforma Agro+',data:'01/12/19',estado:'read'}
       ]
     }
   },
@@ -92,9 +92,6 @@ export default {
   .notf.read{
     border-left: 4px solid #78909C;
     background-color: #EEEEEE;
-  }
-  .notf.new{
-    border-left: 4px solid #69F0AE;
   }
   .notf.unread{
     border-left: 4px solid #00E676;

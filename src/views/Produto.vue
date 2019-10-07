@@ -76,14 +76,38 @@
                 </v-card>
               </v-tab-item>
               <v-tab-item id="descricao">
-                <v-card flat>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat libero neque soluta, rerum culpa minima pariatur cumque accusamus laudantium veniam asperiores eligendi, repellat ipsa sequi, similique dolores commodi minus laborum.
-                </v-card>
+                <v-container v-for="prod in produto" :key="prod.id" class="grey lighten-4 my-auto">
+                    <div class="body-1 font-weight-light mb-3 grey--text text--darken-3"><span class="text-uppercase font-weight-medium">Categoria:</span> {{prod.categoria}}</div>
+                    <div class="body-1 font-weight-light mb-3 grey--text text--darken-3"><span class="text-uppercase font-weight-medium">Subcategoria: </span> {{prod.subcategoria}}</div>
+                    <div class="body-1 font-weight-light mb-3 grey--text text--darken-3 "><span class="text-uppercase font-weight-medium">descrição geral:</span></div>
+                    <div class="body-1 font-weight-light text-justify grey--text text--darken-3">{{prod.descricao}} </div>
+                </v-container>
               </v-tab-item>
               <v-tab-item id="avaliacoes">
-                <v-card flat>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat libero neque soluta, rerum culpa minima pariatur cumque accusamus laudantium veniam asperiores eligendi, repellat ipsa sequi, similique dolores commodi minus laborum.
-                </v-card>
+                <v-container v-for="prod in produto" :key="prod.id" class="grey lighten-4 my-auto">
+                  <div class="body-1 text-uppercase text-center font-weight-medium mb-2 grey--text text--darken-3">
+                    Avaliação Total
+                    <v-rating readonly color="amber" class="mt-n2" background-color="amber" half-increments v-model="prod.rate"></v-rating>
+                  </div>
+                  <div class="body-1 grey--text mt-n3 text--darken-1 text-center font-weight-light mb-2">({{prod.rate}})</div>
+                  <v-card 
+                  v-for="v in avaliacoes" :key="v.id" flat max-width="344"
+                  class="mx-auto"
+                  > 
+                    <v-card-title class="body-1 grey--text text--darken-1 text-justify">
+                      {{v.texto}}
+                    </v-card-title>
+                    <v-card-text>
+                      <v-row>
+                        <v-col>{{v.data}}</v-col>
+                        <v-col>
+                          <v-rating readonly size="22" class="mt-n1 float-right" dense color="amber" background-color="amber" half-increments v-model="v.rate"></v-rating>
+                        </v-col>
+                       </v-row>
+                    </v-card-text>
+                    <v-divider></v-divider>
+                  </v-card>
+                </v-container>
               </v-tab-item>
             </v-tabs>
           </v-card>
@@ -105,7 +129,13 @@ export default {
         '/tangerina-3.jpeg'
       ],
       produto:[
-        {nome:'Tangerina da boa', produtor:'Loja de Frutas',idprodutor:1,preco:'5.00', estoque:10,medida:'Unidades', categoria:'Frutas',subcategoria:'Sem veneno',rate:4, id:1}
+        {nome:'Tangerina da boa', produtor:'Loja de Frutas',idprodutor:1,preco:'5.00', estoque:10,medida:'Unidades', categoria:'Frutas',subcategoria:'Sem veneno',rate:4.5, id:1, descricao:'Tangerina cultivada naturalmente sem nenhum uso de agrotóxicos.'}
+      ],
+      avaliacoes:[
+        {texto:'Esse produto é muito bom!', rate:5,data:'13/08/2019',id:1},
+        {texto:'Docinha que só o mel', rate:4, data:'15/08/2019',id:2},
+        {texto:'Entregou dentro do prazo', rate:4, data:'14/08/2019',id:3},
+        {texto:'Bom atendimento', rate:5, data:'12/08/2019',id:4}
       ],
       tab: null,
       tabs:3,
