@@ -1,16 +1,19 @@
 <template>
-  <v-container class="my-auto">
-    <div class="hidden-sm-and-up">
+  <v-container class="my-auto" fluid>
+    <div class="hidden-md-and-up">
       <v-row justify="center">
-        <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-botton-transition">
+        <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-right-transition">
           <v-card class="grey lighten-5">
-            <v-app-bar flat class="border-botton-grey">
-              <v-btn icon text color="white" to="/perfil">
-                <v-icon size="28" color="success">arrow_back</v-icon>
+            <v-app-bar flat color="success">
+              <v-btn icon text color="success" to="/perfil">
+                <v-icon size="28" color="white">arrow_back</v-icon>
               </v-btn>
-              <v-toolbar-title class="success--text m-2l font-weight-bold title">Informações adicionais</v-toolbar-title>
+              <v-toolbar-title class="white--text m-2l font-weight-bold title"><b>Informações adicionais</b></v-toolbar-title>
             </v-app-bar>
             <v-container >
+              <div class="text-center">
+                <h4 class=" subtitle font-weight-regular mt-3 mb-3 grey--text text--darken-2">Preencha as informações a seguir para habilitar a função de compra!</h4>
+              </div>
               <v-stepper v-model="e1">
               <v-stepper-header>
                 <v-stepper-step editable color="success" :complete="e1 > 1" step="1">Informações pessoais</v-stepper-step>
@@ -72,7 +75,7 @@
                       shaped
                       v-model="cpf"
                       label="CPF"
-                      type="text"
+                      type="number"
                       color="success"
                       hint="Digite seu CPF."
                       required
@@ -83,7 +86,7 @@
                       v-model="contato"
                       label="Contato"
                       color="success"
-                      type="text"
+                      type="number"
                       hint="Digite seu número de telefone ou WhatsApp"
                       required
                       ></v-text-field>
@@ -116,7 +119,7 @@
                       shaped
                       v-model="cnpj"
                       label="CNPJ"
-                      type="text"
+                      type="number"
                       color="success"
                       hint="Digite o CNPJ."
                       required
@@ -127,7 +130,7 @@
                       v-model="contato"
                       label="Contato"
                       color="success"
-                      type="text"
+                      type="number"
                       hint="Digite o número de telefone ou WhatsApp"
                       required
                       ></v-text-field>
@@ -153,7 +156,7 @@
                       <v-text-field
                       shaped
                       filled
-                      type="text"
+                      type="number"
                       v-model="cep"
                       label="CEP"
                       hint="Ao digitar seu CEP nós iremos preencher automaticamente os dados abaixo, porém você ainda poderá autalizá-los."
@@ -173,6 +176,15 @@
                       shaped
                       filled
                       type="text"
+                      v-model="cidade"
+                      label="Cidade"
+                      color="success"
+                      required
+                      ></v-text-field>
+                      <v-text-field
+                      shaped
+                      filled
+                      type="text"
                       v-model="bairro"
                       label="Bairro"
                       color="success"
@@ -182,12 +194,20 @@
                       shaped
                       filled
                       type="text"
-                      v-model="cidade"
-                      label="Cidade"
+                      v-model="complemento"
+                      label="Complemento"
+                      color="success"
+                      ></v-text-field>
+                      <v-text-field
+                      shaped
+                      filled
+                      type="number"
+                      v-model="numero"
+                      label="Número"
                       color="success"
                       required
                       ></v-text-field>
-                        <v-checkbox v-model="exibir" color="success" label="Deseja exibir endereço durante a compra ?" class="ml-1"></v-checkbox>
+                        <v-checkbox v-model="exibir" color="success" label="Deseja exibir endereço durante a compra ?" class="ml-1 mt-n4"></v-checkbox>
                     </v-form>
                     <v-btn text class="float-left" @click="e1--">Voltar</v-btn>
                     <v-btn
@@ -226,6 +246,8 @@ export default {
         bairro:null,
         cidade:null,
         exibir:false,
+        numero:null,
+        complemento:null
       }
     },
 }

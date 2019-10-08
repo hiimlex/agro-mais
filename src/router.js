@@ -12,7 +12,7 @@ import Produto from './views/Produto'
 import Notification from './views/Notifications'
 import Cart from './views/Cart'
 import Search from './views/Search'
-import ComprasDescricao from './views/ComprasDescricao'
+import Informacoesvendas from './views/Informacoesvendas'
 
 Vue.use(Router)
 
@@ -42,7 +42,17 @@ const router =  new Router({
       component: InformacoeAdicionais
     },
     {
-      path: '/perfil',
+      path: '/perfil/editar',
+      name: 'editar',
+      component: Editar
+    },
+    {
+      path:'/perfil/informacoesvendas',
+      name: 'informacoesvendas',
+      component: Informacoesvendas
+    },
+    {
+      path: '/perfil/:id?',
       name: 'perfil',
       component: Perfil,
       meta: {
@@ -54,11 +64,7 @@ const router =  new Router({
       name: 'compras',
       component: Compras
     },
-    {
-      path: '/perfil/editar',
-      name: 'editar',
-      component: Editar
-    },
+    
     {
       path: '/recuperarsenha',
       name: 'recuperarsenha',
@@ -85,9 +91,9 @@ const router =  new Router({
       component: Search
     },
     {
-      path: '/compras/descricao',
-      name: 'comprasdescricao',
-      component: ComprasDescricao
+      path:'/anunciar',
+      name:'anunciar',
+      component: () => import('./views/Anunciar.vue')
     }
   ]
 })

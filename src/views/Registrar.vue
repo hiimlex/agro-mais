@@ -1,8 +1,7 @@
 <template>
-
   <v-container class="my-auto">
   <!-- <v-divider class="hidden-md-and-up"></v-divider> -->
-  <v-form class=" hidden-sm-and-up">
+  <v-form class=" hidden-md-and-up">
     <v-card 
       class="mx-auto"
       max-width="500"
@@ -35,6 +34,7 @@
           shaped
           hint="Este é a senha que você irá utilizar para entrar na sua conta Agro+"
         ></v-text-field>
+        <v-checkbox v-model="termos" color="success" label="Você aceita os termos de usuário ?" class="ml-1 mt-n3 mb-n3" @click.prevent="aceitarTermos()"></v-checkbox>
       </v-card-text>
       
       <v-divider></v-divider>
@@ -58,8 +58,23 @@
   >
     {{ message }}
   </v-snackbar>
+  <v-row justify="center">
+    <v-dialog v-model="modal" persistent max-width="290" scrollable>
+      <v-card>
+        <v-card-title class="headline">Termos de usuário</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, vel suscipit, id deleniti odio quia a accusantium optio sit nihil eligendi, delectus maiores dicta voluptatem. Deleniti porro quae tempora minima.
+        </v-card-text>
+        <v-card-actions>
+          <div class="flex-grow-1"></div>
+          <v-btn color="green darken-1" text @click="modal = false">Aceito</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
   </v-container>
-
 </template>
 
 <script>
@@ -78,7 +93,9 @@ export default {
       snackbarHidden:false,
       message: null,
       email: '',
+      termos:false,
       status: false,
+      modal:false,
       emailRules: [
         v => /.+@.+\..+/.test(v) || 'Insira um E-mail válido',
       ],
@@ -111,6 +128,16 @@ export default {
           this.active = true
         })
       }
+    },
+    aceitarTermos(){
+      if(this.modal !== null){
+        this.modal = true
+        this.termos = true
+      }
+    },
+    negarTermos(){
+      this.modal = false
+      this.termos = false
     }
   }
 

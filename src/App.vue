@@ -1,21 +1,25 @@
 <template>
   <v-app class="poppins-font bc-white">
     <Navbar/>
-        <v-content class="grey lighten-5">
-            <router-view/>
+        <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
+            <router-view transition="fade"/>
+            <FloatBtn class="hidden-md-and-up"/>
         </v-content>
     <BottonNavAgro v-if="$store.state.login"/>
   </v-app>  
 </template>
 
 <script>
+
 import { api } from '@/services'
+import FloatBtn from './components/Floatbtn'
 import Navbar from './components/Navbar'
 import BottonNavAgro from './views/BottonNavAgro'
 import { mapState } from 'vuex'
 export default {
   name: 'App',
-  components: {Navbar,BottonNavAgro},
+
+  components: {Navbar,BottonNavAgro, FloatBtn},
 
  created() {
     if (window.localStorage.token) {
@@ -40,6 +44,8 @@ export default {
 
 }
 }
+
+
 </script>
 
 <style scoped>
@@ -58,5 +64,14 @@ export default {
 }
 .link{
   text-decoration: none;
+
+    border-bottom: 1.6px solid #E0E0E0 !important;
+}
+.add-btn{
+  position: fixed;
+  right: 5%;
+  bottom: 12%;
+  color: white !important;
+
 }
 </style>
