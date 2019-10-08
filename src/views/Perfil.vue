@@ -39,7 +39,7 @@
               </v-list>
               <v-divider></v-divider>
               <div class="text-center">
-                <v-btn text>SAIR</v-btn>
+                <v-btn text @click="sair">SAIR</v-btn>
               </div>
               <br><br>
             </v-container>
@@ -64,6 +64,13 @@ export default {
         {icon: 'receipt',route: '/compras', text: 'Visualizar Compras'},
         {icon:'edit', route: '/perfil/editar', text: 'Editar Perfil'}
       ]
+    }
+  },
+  methods: {
+    sair(){
+    this.$store.dispatch("deslogar").then(response => {
+        this.$router.push('/')
+    })
     }
   }
 }

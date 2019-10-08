@@ -46,6 +46,7 @@
             v-for="link in sidelinks" :key="link.title"
             router :to="link.route" color="success"
           >
+          
             <v-list-item-icon>
             <v-icon left>{{link.icon}}</v-icon>
             </v-list-item-icon>
@@ -53,6 +54,7 @@
             <v-list-item-content>
               <v-list-item-title class="subtitle-1">{{link.title}}</v-list-item-title>
             </v-list-item-content>
+            
           </v-list-item>
         </v-list>
         <br><br><br><br><br><br><br><br><br><br><br>
@@ -92,7 +94,8 @@ export default {
       {icon:'attach_money', title:'Anunciar', route:'/anunciar'}
     ]
     }
-  }
+  },
+ 
 }
 </script>
 

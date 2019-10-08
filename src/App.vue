@@ -4,17 +4,42 @@
         <v-content class="grey lighten-5">
             <router-view/>
         </v-content>
-    <BottonNavAgro/>
+    <BottonNavAgro v-if="$store.state.login"/>
   </v-app>  
 </template>
 
 <script>
+import { api } from '@/services'
 import Navbar from './components/Navbar'
 import BottonNavAgro from './views/BottonNavAgro'
+import { mapState } from 'vuex'
 export default {
   name: 'App',
-  components: {Navbar,BottonNavAgro}
-};
+  components: {Navbar,BottonNavAgro},
+
+ created() {
+    if (window.localStorage.token) {
+        api
+        .validaToken()
+        .then(response => {
+          this.$store.dispatch("getPerfil")
+        })
+    }
+ },
+  computed: {
+    ...mapState(['login','snackbar', 'p_incomplete']),
+  show: {
+    get () {
+      return this.$store.state.snackbar
+    },
+    set (value) {
+      this.$store.commit('UPDATE_SNACKBAR', true)
+    }
+  }
+
+
+}
+}
 </script>
 
 <style scoped>
@@ -30,5 +55,8 @@ export default {
 }
 .border-botton-grey{
     border-bottom: 1.4px solid #E0E0E0 !important;
-  }
+}
+.link{
+  text-decoration: none;
+}
 </style>

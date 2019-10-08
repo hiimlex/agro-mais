@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import api from '@/services/api'
+import { api } from '@/services'
 import router from '@/router'
 
 export default {

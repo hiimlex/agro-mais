@@ -13,7 +13,7 @@
               <v-text-field
                 placeholder="Digite seu email"
                 color="success"
-                v-model="email"           
+                v-model="login.email"           
                 :rules="emailRules"
                 label="Email"
                 required
@@ -27,7 +27,7 @@
                 label="Senha"
                 type="password"
                 color="success"
-                v-model="pass"
+                v-model="login.pass"
                 :rules="passRules"
                 required
               ></v-text-field>
@@ -45,7 +45,7 @@
               <v-btn
               :disabled="!valid"
               color="success"
-              @click="loginAccount"
+              @click.prevent="logar"
               >Login</v-btn>
             </v-card-actions>
       </v-card>
@@ -68,7 +68,7 @@
           <v-text-field
             type="email"
             color="success"
-            v-model="email"           
+            v-model="login.email"           
             
             label="Email"
             required="Required"
@@ -83,7 +83,7 @@
             label="Senha"
             :type="show ? 'text' : 'password'"
             color="success"
-            v-model="pass"
+            v-model="login.pass"
             
             required
             shaped
@@ -101,7 +101,7 @@
           <v-btn
           :disabled="!valid"
           color="success"
-          @click="loginAccount"
+          @click.prevent="logar"
           >Login</v-btn>
         </v-card-actions>
       </v-card>
@@ -112,35 +112,32 @@
 </template>
 
 <script>
-import api from '@/services/api'
  export default {
     data(){
       return{
         show: false,
         valid: true,
         password: 'Password',
-        email: '',
+      login: {
+        email: "",
+        pass: ""
+      },
         emailRules: [
           v => /.+@.+\..+/.test(v) || 'Insira um E-mail válido',
         ],
-        pass: null,
         passRules:[
           v => v >= 6 || 'Sua senha deve possuir mais de 6 caracteres'
         ]
     }
   },
     methods:{
-      loginAccount(){
-        if(this.pass !== null){
-          api
-          .post('login',{
-            email: this.email,
-            pass: this.pass
-        })
-        }
-      }
+      logar() {
+        this.$store.dispatch("logarUsuario", this.login).then(response => {
+        this.$router.push("/");
+      });
     }
   }
+}
 </script>
 
 <style>
