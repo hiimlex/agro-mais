@@ -1,10 +1,10 @@
 <template>
   <div id="Navbar" class="my-auto">
       <div class="display-4 hidden-md-and-down text-center">
-        Plataforma web em construção... utilize seu Smartphone.
+        Plataforma web em construção... utilize seu Smartphone ou Tablet.
       </div>
       <!-- Mobile -->
-      <v-app-bar class="hidden-sm-and-up border-botton-grey" elevation="0">
+      <v-app-bar class="hidden-md-and-up border-botton-grey" elevation="0">
         <v-btn @click="drawer = !drawer" icon text color="white">
           <v-icon color="success" size="28">menu</v-icon>
         </v-btn>

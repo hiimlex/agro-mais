@@ -3,7 +3,7 @@
     <Navbar/>
         <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
             <router-view transition="fade"/>
-            <FloatBtn/>
+            <FloatBtn class="hidden-md-and-up"/>
         </v-content>
     <BottonNavAgro/>
   </v-app>  

@@ -1,85 +1,71 @@
 <template>
   <v-container class="my-auto">
-    <div class="hidden-sm-and-up">
-      <v-row justify="center">
-        <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-right-transition">
-          <v-card class="grey lighten-5">
-            <v-app-bar flat color="success">
-              <v-btn icon text color="success" to="/perfil">
-                <v-icon size="28" color="white">arrow_back</v-icon>
-              </v-btn>
-              <v-toolbar-title class="white--text m-2l font-weight-bold title"><b>Informações adicionais</b></v-toolbar-title>
-            </v-app-bar>
-            <v-container>
-              <div class="text-center">
-                <h4 class=" subtitle font-weight-regular mb-3 grey--text text--darken-2">Preencha as informações a seguir para habilitar a função de anunciar!</h4>
-              </div>
-              <v-form class="hidden-sm-and-up">
-                <v-card 
-                  class="mx-auto"
-                  max-width="500"
-                >
-                  <v-card-title class="title font-weight-regular justify-center">
-                    <span>Informações para anuncios</span>
-                  </v-card-title>
-                  <v-divider class="mb-3"></v-divider>
-                  <div class="text-center mb-3">
-                    <v-avatar size="128">
-                      <v-img :src="preview"></v-img>
-                    </v-avatar>
-                  </div>
-                  <v-file-input
-                    :rules="rules"
-                    accept="image/png, image/jpeg, image/bmp"
-                    placeholder="Enviar foto para perfil"
-                    prepend-icon="mdi-camera"
-                    label="Perfil"
-                    color="success"
-                    v-model="img"
-                    class="ml-3 mr-4"
-                    required
-                    @click:clear="cleanIMG"
-                  ></v-file-input>
-                  <v-textarea
-                    filled
-                    shaped
-                    v-model="descricao"
-                    type="text"
-                    label="Descrição"
-                    color="success"
-                    hint="Descrição da loja"
-                    required
-                    counter
-                    maxlength="100"
-                    class="ml-3 mr-3"
-                    ></v-textarea>
-                  <v-checkbox v-model="entrega" color="success" label="Faz entrega ?" class="ml-3 mt-n4"></v-checkbox>
-                  <v-select
-                    prepend-icon="local_shipping"
-                    v-if="entrega === true"
-                    v-model="bairros"
-                    :items="items"
-                    small-chips
-                    label="Bairros"
-                    multiple
-                    color="success"
-                    class="ml-3 mr-3 mt-n4"
-                    persinstent-hint="Selecione os bairros que atende"
-                    item-color="success"
-                    clearable
-                    required
-                  ></v-select>
-                  <v-divider></v-divider>
-                  <v-card-actions>
-                    <div class="flex-grow-1"></div>
-                    <v-btn color="success">Salvar</v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-form>
-            </v-container>
-          </v-card>
-        </v-dialog>
-      </v-row>
+    <div class="hidden-md-and-up">
+      <div class="text-center">
+        <h4 class=" subtitle font-weight-regular mb-3 grey--text text--darken-2">Preencha as informações a seguir para habilitar a função de anunciar!</h4>
+      </div>
+      <v-form class="hidden-md-and-up">
+        <v-card 
+          class="mx-auto"
+          max-width="500"
+        >
+          <v-card-title class="title font-weight-regular justify-center">
+            <span>Informações para anuncios</span>
+          </v-card-title>
+          <v-divider class="mb-3"></v-divider>
+          <div class="text-center mb-3">
+            <v-avatar size="128">
+              <v-img :src="preview"></v-img>
+            </v-avatar>
+          </div>
+          <v-file-input
+            :rules="rules"
+            accept="image/png, image/jpeg, image/bmp"
+            placeholder="Enviar foto para perfil"
+            prepend-icon="mdi-camera"
+            label="Perfil"
+            color="success"
+            v-model="img"
+            class="ml-3 mr-4"
+            required
+            @click:clear="cleanIMG"
+          ></v-file-input>
+          <v-textarea
+            filled
+            shaped
+            v-model="descricao"
+            type="text"
+            label="Descrição"
+            color="success"
+            hint="Descrição da loja"
+            required
+            counter
+            maxlength="100"
+            class="ml-3 mr-3"
+            ></v-textarea>
+          <v-checkbox v-model="entrega" color="success" label="Faz entrega ?" class="ml-3 mt-n4"></v-checkbox>
+          <v-select
+            prepend-icon="local_shipping"
+            v-if="entrega === true"
+            v-model="bairros"
+            :items="items"
+            small-chips
+            label="Bairros"
+            multiple
+            color="success"
+            class="ml-3 mr-3 mt-n4"
+            persinstent-hint="Selecione os bairros que atende"
+            item-color="success"
+            clearable
+            required
+          ></v-select>
+          <v-divider></v-divider>
+          <v-card-actions>
+            <div class="flex-grow-1"></div>
+            <v-btn color="success">Salvar</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-form>
     </div>
   </v-container>
 </template>

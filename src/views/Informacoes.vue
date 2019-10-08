@@ -1,6 +1,6 @@
 <template>
   <v-container class="my-auto" fluid>
-    <div class="hidden-sm-and-up">
+    <div class="hidden-md-and-up">
       <v-row justify="center">
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-right-transition">
           <v-card class="grey lighten-5">

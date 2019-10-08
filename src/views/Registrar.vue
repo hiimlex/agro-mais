@@ -1,7 +1,7 @@
 <template>
   <v-container class="my-auto">
   <!-- <v-divider class="hidden-md-and-up"></v-divider> -->
-  <v-form class=" hidden-sm-and-up">
+  <v-form class=" hidden-md-and-up">
     <v-card 
       class="mx-auto"
       max-width="500"

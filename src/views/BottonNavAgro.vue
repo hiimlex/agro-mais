@@ -3,7 +3,7 @@
   <footer id="bottonNavAgro" v-if="logged" app>
     <v-bottom-navigation
       app
-      class="hidden-sm-and-up"
+      class="hidden-md-and-up"
       grow
     >
       <v-btn value="home" to="/">

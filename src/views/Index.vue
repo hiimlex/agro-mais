@@ -1,7 +1,7 @@
 <template>
   <v-container class="my-auto mt-3">
     <!-- Categorias -->
-    <div class="hidden-sm-and-up">
+    <div class="hidden-md-and-up">
      <v-card>
       <v-tabs
         background-color="white"
@@ -34,6 +34,14 @@
       </v-tabs>
     </v-card>
     <Cards/>
+    <v-row class="mt-n5">
+      <v-col cols="12">
+        <v-container fluid>
+          <div class="caption text-center font-weight-light mb-1">Não encontrou o que procura ? Anuncie <v-icon small>local_atm
+</v-icon></div>
+        </v-container>
+      </v-col>
+    </v-row>
   </div>
   </v-container>
 </template>
