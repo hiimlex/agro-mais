@@ -1,6 +1,5 @@
 <template>
   <v-container class="my-auto">
-    <v-container fluid>
     <v-card
       class="mx-auto text-center"
       max-width="500"
@@ -30,7 +29,6 @@
           >Enviar</v-btn>
       </v-card-actions>
     </v-card>
-    </v-container>
   </v-container>
 </template>
 

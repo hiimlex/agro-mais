@@ -29,7 +29,6 @@ export default {
   color: #009B36 !important;
 }
 .border-botton-grey{
-    border-bottom: 1.4px solid #E0E0E0 !important;
+    border-bottom: 1.6px solid #E0E0E0 !important;
 }
-
 </style>

@@ -1,6 +1,5 @@
 <template>
   <v-container class="my-auto">
-  <v-container fluid>
   <!-- <v-divider class="hidden-md-and-up"></v-divider> -->
   <v-form class=" hidden-sm-and-up">
     <v-card 
@@ -76,7 +75,6 @@
     </v-dialog>
   </v-row>
   </v-container>
-</v-container>
 </template>
 
 <script>

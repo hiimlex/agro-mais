@@ -1,5 +1,5 @@
 <template>
-  <v-container class="my-auto">
+  <v-container class="my-auto component-center">
     <v-form ref="form" v-model="valid"
     lazy-validation class="hidden-md-and-down">
       <v-card
@@ -52,7 +52,6 @@
     </v-form>
 
     <!-- Mobile -->
-    <v-container fluid>
       <v-form ref="form" v-model="valid"
       lazy-validation class="hidden-sm-and-up">
         <v-card
@@ -107,7 +106,6 @@
           </v-card-actions>
         </v-card>
       </v-form>
-    </v-container>
     <!-- <router-view></router-view> -->
   </v-container>
   

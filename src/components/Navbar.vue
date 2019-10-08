@@ -113,7 +113,7 @@ export default {
     sidelinks:[
       {icon:'person',title:'Entrar',route:'/login'},
       {icon:'person_add',title:'Criar conta',route:'/registrar'},
-      {icon:'attach_money', title:'Anunciar', route:'/anunciar'}
+      {icon:'local_atm', title:'Anunciar', route:'/perfil/informacoesvendas'}
     ],
     categorias:[
       {name:'+Classificados',id:1},

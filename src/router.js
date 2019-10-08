@@ -12,6 +12,7 @@ import Produto from './views/Produto'
 import Notification from './views/Notifications'
 import Cart from './views/Cart'
 import Search from './views/Search'
+import Informacoesvendas from './views/Informacoesvendas'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/perfil/editar',
       name: 'editar',
       component: Editar
+    },
+    {
+      path:'/perfil/informacoesvendas',
+      name: 'informacoesvendas',
+      component: Informacoesvendas
     },
     {
       path: '/perfil/:id?',

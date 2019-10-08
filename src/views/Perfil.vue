@@ -19,7 +19,9 @@
             <v-container>
               <div class="text-center">
                   <h4 class=" subtitle font-weight-regular mb-3 grey--text text--darken-2">Informações de Perfil</h4>
-                  <v-icon size="128">person_pin</v-icon>
+                  <v-responsive>
+                  <v-avatar size="128"><v-img src="http://barcarena.pa.gov.br/portal/img/perfil/padrao.jpg"></v-img></v-avatar>
+                  </v-responsive>
                   <h3 class="font-weight-medium"><span>{{nome}}</span></h3>
               </div>
             </v-container>
@@ -64,6 +66,8 @@ export default {
       dialog: true,
       links:[
         {icon: 'receipt',route: '/compras', text: 'Compras'},
+        {icon:'local_atm',route:'/vendas', text:'Vendas'},
+        {icon:'local_offer', route:'/perfil/informacoesvendas',text:'Informações para Vendas'},
         {icon:'info',route:'/perfil/informacoes',text:'Completar Informações'},
         {icon:'edit', route: '/perfil/editar', text: 'Editar Perfil'}
       ]
