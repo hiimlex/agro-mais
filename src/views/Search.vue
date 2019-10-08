@@ -1,5 +1,6 @@
 <template>
   <v-container class="my-auto">
+    
     <div class="hidden-sm-and-up">
       <v-row justify="center">
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="fade-transition">
@@ -23,6 +24,7 @@
         </v-dialog>
       </v-row>
     </div>
+    
   </v-container>
 </template>
 

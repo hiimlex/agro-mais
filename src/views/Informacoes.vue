@@ -2,15 +2,18 @@
   <v-container class="my-auto" fluid>
     <div class="hidden-sm-and-up">
       <v-row justify="center">
-        <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-botton-transition">
+        <v-dialog fullscreen light v-model="dialog" hide-overlay transition="dialog-right-transition">
           <v-card class="grey lighten-5">
             <v-app-bar flat color="success">
               <v-btn icon text color="success" to="/perfil">
                 <v-icon size="28" color="white">arrow_back</v-icon>
               </v-btn>
-              <v-toolbar-title class="white--text m-2l font-weight-bold title"><b>Informações Adicionais</b></v-toolbar-title>
+              <v-toolbar-title class="white--text m-2l font-weight-bold title"><b>Informações adicionais</b></v-toolbar-title>
             </v-app-bar>
             <v-container >
+              <div class="text-center">
+                <h4 class=" subtitle font-weight-regular mt-3 mb-3 grey--text text--darken-2">Preencha as informações a seguir para habilitar a função de compra!</h4>
+              </div>
               <v-stepper v-model="e1">
               <v-stepper-header>
                 <v-stepper-step editable color="success" :complete="e1 > 1" step="1">Informações pessoais</v-stepper-step>

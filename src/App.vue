@@ -1,19 +1,21 @@
 <template>
   <v-app class="poppins-font bc-white">
     <Navbar/>
-        <v-content class="grey lighten-5 justify-content-center">
-            <router-view/>
+        <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
+            <router-view transition="fade"/>
+            <FloatBtn/>
         </v-content>
     <BottonNavAgro/>
   </v-app>  
 </template>
 
 <script>
+import FloatBtn from './components/Floatbtn'
 import Navbar from './components/Navbar'
 import BottonNavAgro from './views/BottonNavAgro'
 export default {
   name: 'App',
-  components: {Navbar,BottonNavAgro}
+  components: {Navbar,BottonNavAgro, FloatBtn}
 };
 </script>
 
@@ -30,5 +32,11 @@ export default {
 }
 .border-botton-grey{
     border-bottom: 1.6px solid #E0E0E0 !important;
+}
+.add-btn{
+  position: fixed;
+  right: 5%;
+  bottom: 12%;
+  color: white !important;
 }
 </style>

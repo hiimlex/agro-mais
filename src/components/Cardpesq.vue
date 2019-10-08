@@ -32,8 +32,13 @@ export default {
     return {
       widthDevice:'',
       produtos: [
-        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.50',route:'/produto',id:'asdas',rating:2.9 },
-        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasd',rating:4.5}
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.50',route:'/produto',id:'asasdasdasdas',rating:2.9 },
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasdasdasasd',rating:4.5},
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasdasasdasdasdsadasd',rating:4.5},
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasdaasdasdasdsadsasd',rating:4.5},
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdadasdasdasdasd',rating:4.5},
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasasdasdadadasd',rating:4.5},
+        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasdasdasd',rating:4.5}
       ]
     }
   }

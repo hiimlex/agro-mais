@@ -67,7 +67,6 @@
                         solo
                         flat
                         color="success"
-                        clearable
                         v-model="prod.quantidade"
                       ></v-text-field>
                       <v-btn block color="success" depressed class="mt-n5"> Adicionar à sacola </v-btn>         
