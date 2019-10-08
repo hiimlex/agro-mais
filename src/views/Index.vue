@@ -1,6 +1,7 @@
 <template>
   <v-container class="my-auto mt-3">
     <!-- Categorias -->
+    <div class="hidden-sm-and-up">
      <v-card>
       <v-tabs
         background-color="white"
@@ -33,6 +34,7 @@
       </v-tabs>
     </v-card>
     <Cards/>
+  </div>
   </v-container>
 </template>
 

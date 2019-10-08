@@ -1,17 +1,8 @@
 <template>
   <div id="Navbar" class="my-auto">
-        <!-- Web -->
-      <v-toolbar class="hidden-md-and-down ma-3 mb-3" >
-        <router-link to="/" class="router-bar"><v-toolbar-title class="ml-2 logo">Agro+</v-toolbar-title></router-link>
-        <div class="flex-grow-1"></div>
-        <!-- <v-text-field filled append-icon="search" class="mx-4 " color="success" text hide-details label="Buscar" clearable ></v-text-field> -->
-        <div class="flex-grow-1"></div>
-        <v-toolbar-items class="hidden-sm-and-down" v-for="link in links" :key="link.id" >
-          <v-btn text link :to="link.route">
-            <v-icon>{{link.icon}}</v-icon>{{link.text}}</v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
-
+      <div class="display-4 hidden-md-and-down text-center">
+        Plataforma web em construção... utilize seu Smartphone.
+      </div>
       <!-- Mobile -->
       <v-app-bar class="hidden-sm-and-up border-botton-grey" elevation="0">
         <v-btn @click="drawer = !drawer" icon text color="white">

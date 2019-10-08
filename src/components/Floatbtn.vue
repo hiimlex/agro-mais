@@ -1,4 +1,5 @@
 <template>
+<div class="hidden-sm-and-up">
   <v-btn
       v-if="$route.name === 'index'"
       dark
@@ -9,6 +10,7 @@
     >
       <v-icon size="38">mdi-plus</v-icon>
   </v-btn>
+</div>
 </template>
 
 <script>

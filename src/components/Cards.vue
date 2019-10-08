@@ -28,7 +28,6 @@ export default {
     return {
       produtos: [
         { nome: 'Uva Roxa', produtor: 'Agro Frutas', foto: '/uva.jpeg',preco:'2.00',route:'/produto',id:'asdas',rating:2.9 },
-        { nome: 'Uva', produtor: 'Loja de frutas', foto: '/uva.jpeg',preco:'3.40',route:'/produto',id: 'asdasd',rating:4.5},
         { nome: 'Kiwi', produtor: 'Loja de frutas', foto: '/kiwi.jpeg',preco:'10.0',route:'/produto',id: 'asdasdasda',rating:4.5}
       ]
     }

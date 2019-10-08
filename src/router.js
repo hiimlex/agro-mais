@@ -87,6 +87,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search
+    },
+    {
+      path:'/anunciar',
+      name:'anunciar',
+      component: () => import('./views/Anunciar.vue')
     }
   ]
 })
