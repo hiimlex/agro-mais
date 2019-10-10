@@ -230,7 +230,11 @@
 </template>
 
 <script>
+import { maskcpf,maskcep,maskcnpj,maskcontato } from 'vue-the-mask'
 export default {
+  directives:{
+    maskcpf,maskcep,maskcnpj,maskcontato
+  },
   data () {
       return {
         dialog:true,

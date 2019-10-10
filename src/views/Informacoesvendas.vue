@@ -28,7 +28,6 @@
             v-model="img"
             class="ml-3 mr-4"
             required
-            @click:clear="cleanIMG"
           ></v-file-input>
           <v-textarea
             filled
@@ -42,7 +41,7 @@
             counter
             maxlength="100"
             class="ml-3 mr-3"
-            ></v-textarea>
+          ></v-textarea>
           <v-checkbox v-model="entrega" color="success" label="Faz entrega ?" class="ml-3 mt-n4"></v-checkbox>
           <v-select
             prepend-icon="local_shipping"
@@ -79,16 +78,11 @@ export default {
         value => !value || value.size < 5000000 || 'O Arquivo deverá ser menor do que 5 MBs!',
       ],
       img:null,
-      preview:'http://barcarena.pa.gov.br/portal/img/perfil/padrao.jpg',
+      preview: require('../assets/padrao.jpg'),
       descricao:'',
       entrega: null,
       items:['Crato em geral','Seminário','São Miguel','Vila Alta','Novo Crato','Parque Recreio','Pinto Madeira','Muriti','Gizélia Pinheiro(batateiras)','Ossian Araripe(caixa D`água)'],
       bairros:[]
-    }
-  },
-  methods:{
-    cleanIMG(){
-      this.img = null
     }
   },
   watch:{
@@ -97,7 +91,7 @@ export default {
       this.preview = URL.createObjectURL(this.img)
     } else {
       this.preview = URL.revokeObjectURL(this.img)
-      this.preview = 'http://barcarena.pa.gov.br/portal/img/perfil/padrao.jpg'
+      this.preview = require('../assets/padrao.jpg')
       }
     }
   }

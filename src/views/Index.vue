@@ -1,9 +1,9 @@
 <template>
 
-  <v-container class="my-auto mt-3">
-     <v-alert v-if="perfil_inc" class="white--text" color="success" icon="person" dismissible prominent>
+  <v-container class="my-auto">
+     <!-- <v-alert v-if="perfil_inc" class="white--text" color="success" icon="person" dismissible prominent dense >
       {{p_incomplete}}
-      </v-alert>
+      </v-alert> -->
     <!-- Categorias -->
     <div class="hidden-md-and-up">
      <v-card>

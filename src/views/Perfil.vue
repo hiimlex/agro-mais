@@ -20,7 +20,7 @@
               <div class="text-center">
                   <h4 class=" subtitle font-weight-regular mb-3 grey--text text--darken-2">Informações de Perfil</h4>
                   <v-responsive>
-                  <v-avatar size="128"><v-img src="http://barcarena.pa.gov.br/portal/img/perfil/padrao.jpg"></v-img></v-avatar>
+                    <v-avatar size="128"><v-img src="../assets/padrao.jpg"></v-img></v-avatar>
                   </v-responsive>
                   <h3 class="font-weight-medium mt-2"><span>{{nome}}</span></h3>
               </div>
@@ -56,7 +56,6 @@
 </template>
 
 <script>
-import {voltar} from '../services/helpers'
 import BottonNavAgro from './BottonNavAgro'
 export default {
   components:{BottonNavAgro},

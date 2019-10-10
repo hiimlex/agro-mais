@@ -1,56 +1,5 @@
 <template>
   <v-container class="my-auto">
-    <v-form ref="form" v-model="valid"
-    lazy-validation class="hidden-md-and-down">
-      <v-card
-        class="mx-auto text-center"
-        max-width="500"
-      >
-        <v-card-title class="title font-weight-regular justify-center">
-          <span >Olá! Insira seu E-mail e Senha para continuar.</span>
-        </v-card-title>
-            <v-card-text>
-              <v-text-field
-                placeholder="Digite seu email"
-                color="success"
-                v-model="login.email"           
-                :rules="emailRules"
-                label="Email"
-                required
-                autocorrect="off" autocapitalize="none"
-              ></v-text-field>
-              <span class="caption grey--text text--darken-1">
-                Este é o email que você irá utilizar para entrar na sua conta Agro+
-              </span>
-              <v-text-field
-                placeholder="Digite sua senha"
-                label="Senha"
-                type="password"
-                color="success"
-                v-model="login.pass"
-                :rules="passRules"
-                required
-              ></v-text-field>
-              <span class="caption grey--text text--darken-1">
-                  Por favor entre com sua senha
-                </span>
-                <v-spacer></v-spacer>
-                <v-btn class="success--text white" text depressed >Não sei minha senha</v-btn>
-            </v-card-text>
-            <v-divider></v-divider>
-            <v-divider></v-divider>
-            <v-card-actions>
-              <v-btn text to="/registrar">Criar conta</v-btn>
-              <div class="flex-grow-1"></div>
-              <v-btn
-              :disabled="!valid"
-              color="success"
-              @click.prevent="logar"
-              >Login</v-btn>
-            </v-card-actions>
-      </v-card>
-    </v-form>
-
     <!-- Mobile -->
     <v-form ref="form" v-model="valid"
     lazy-validation class="hidden-sm-and-up">
@@ -90,6 +39,7 @@
             @click:append="show = !show"
             filled
             hint="Sua senha deve conter mais de 6 caracteres."
+            v-on:keyup.enter="logar"
           ></v-text-field>
             <v-spacer></v-spacer>
             <v-btn class="success--text white" text depressed to="/recuperarsenha">Não sei minha senha</v-btn>
