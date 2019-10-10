@@ -45,7 +45,8 @@
                   </v-carousel>
                   <v-container v-for="prod in produto" :key="prod.id" class="grey lighten-4">
                     <div class="headline text-capitalize grey--text text--darken-3 font-weight-light text-justify">{{prod.nome}}</div>
-                    <div class="caption grey--text text--darken-3 text-justify font-weight-light">por <router-link :to="`/perfil/${prod.idprodutor}`" class="remove-text-underline grey--text font-weight-medium"><span>{{prod.produtor}}</span></router-link></div>
+                    <!-- Colocar depois as children -->
+                    <div class="caption grey--text text--darken-3 text-justify font-weight-light">por <router-link :to="'perfil/publico'" class="remove-text-underline grey--text font-weight-medium"><span>{{prod.produtor}}</span></router-link></div>
                     <div class="display-1 text-justify grey--text text--darken-3 font-weight-light">R$ {{prod.preco}}</div>
                     <v-form color="white">
                       <v-text-field
@@ -84,28 +85,32 @@
               </v-tab-item>
               <v-tab-item id="avaliacoes">
                 <v-container v-for="prod in produto" :key="prod.id" class="grey lighten-4 my-auto">
-                  <div class="body-1 text-uppercase text-center font-weight-medium mb-2 grey--text text--darken-3">
-                    Avaliação Total
-                    <v-rating readonly color="amber" class="mt-n2" background-color="amber" half-increments v-model="prod.rate"></v-rating>
-                  </div>
-                  <div class="body-1 grey--text mt-n3 text--darken-1 text-center font-weight-light mb-2">({{prod.rate}})</div>
-                  <v-card 
-                  v-for="v in avaliacoes" :key="v.id" flat max-width="344"
-                  class="mx-auto"
-                  > 
-                    <v-card-title class="body-1 grey--text text--darken-1 text-justify">
-                      {{v.texto}}
-                    </v-card-title>
-                    <v-card-text>
-                      <v-row>
-                        <v-col>{{v.data}}</v-col>
-                        <v-col>
-                          <v-rating readonly size="22" class="mt-n1 float-right" dense color="amber" background-color="amber" half-increments v-model="v.rate"></v-rating>
-                        </v-col>
-                       </v-row>
-                    </v-card-text>
-                    <v-divider></v-divider>
-                  </v-card>
+                  <v-row>
+                    <v-col cols="12" sm="12">
+                      <div class="body-1 text-uppercase text-center font-weight-medium mb-2 grey--text text--darken-3">
+                        Avaliação Total
+                        <v-rating readonly color="amber" class="mt-n2" background-color="amber" half-increments v-model="prod.rate"></v-rating>
+                      </div>
+                      <div class="body-1 grey--text mt-n3 text--darken-1 text-center font-weight-light mb-2">({{prod.rate}})</div>
+                      <v-card 
+                      v-for="v in avaliacoes" :key="v.id" flat max-width="344"
+                      class="mx-auto"
+                      > 
+                        <v-card-title class="body-1 grey--text text--darken-1 text-justify">
+                          {{v.texto}}
+                        </v-card-title>
+                        <v-card-text>
+                          <v-row>
+                            <v-col>{{v.data}}</v-col>
+                            <v-col>
+                              <v-rating readonly size="22" class="mt-n1 float-right" dense color="amber" background-color="amber" half-increments v-model="v.rate"></v-rating>
+                            </v-col>
+                          </v-row>
+                        </v-card-text>
+                        <v-divider></v-divider>
+                      </v-card>
+                    </v-col>
+                  </v-row>
                 </v-container>
               </v-tab-item>
             </v-tabs>

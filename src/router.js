@@ -13,6 +13,7 @@ import Notification from './views/Notifications'
 import Cart from './views/Cart'
 import Search from './views/Search'
 import Informacoesvendas from './views/Informacoesvendas'
+import Perfilpublico from './views/Perfilpublico'
 
 Vue.use(Router)
 
@@ -50,6 +51,12 @@ const router =  new Router({
       path:'/perfil/informacoesvendas',
       name: 'informacoesvendas',
       component: Informacoesvendas
+    },
+    {
+      /* pra ter como eu ir, depois tu faz a implementação dos children e me explica. */
+      path:'/perfil/publico',
+      name: 'perfilpublico',
+      component: Perfilpublico
     },
     {
       path: '/perfil/:id?',
