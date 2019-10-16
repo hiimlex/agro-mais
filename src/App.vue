@@ -1,12 +1,13 @@
 <template>
   <v-app class="poppins-font bc-white">
-    <Navbar />
-    <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
-      <router-view transition="fade" />
-      <FloatBtn class="hidden-md-and-up" />
-    </v-content>
-    <BottonNavAgro v-if="$store.state.login" />
-  </v-app>
+    <Navbar/>
+        <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
+            <router-view transition="fade"/>
+            
+            <FloatBtn class="hidden-md-and-up"/>
+        </v-content>
+    <BottonNavAgro v-if="$store.state.login"/>
+  </v-app>  
 </template>
 
 <script>
