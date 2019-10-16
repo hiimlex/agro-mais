@@ -1,9 +1,7 @@
 <template>
 
   <v-container class="my-auto mt-3">
-     <v-alert v-if="perfil_inc" class="white--text" color="success" icon="person" dismissible prominent>
-      {{p_incomplete}}
-      </v-alert>
+
     <!-- Categorias -->
     <div class="hidden-md-and-up">
      <v-card>
@@ -54,21 +52,7 @@
 import Cards from '../components/Cards'
 import { mapState } from 'vuex'
   export default {
-    components:{Cards},
-    data(){
-      return{
-        perfil_inc: false
-      }
-    },
-    computed:{
-      ...mapState(['p_incomplete'])
-    },
-    created(){
-      if(this.$store.state.usuario.pessoa){
-          this.$store.commit('UPDATE_MESSAGE_PERFIL')
-          this.perfil_inc = true
-      }
-    }
+    components:{Cards}
     
   }
 </script>

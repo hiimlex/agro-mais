@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import {voltar} from '../services/helpers'
+import { voltar } from '@/helpers'
 export default {
   data(){
     return{

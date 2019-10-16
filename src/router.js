@@ -37,27 +37,29 @@ const router =  new Router({
       component: Registrar
     },
     {
-      path: '/perfil/informacoes',
-      name: 'informacoes',
-      component: InformacoeAdicionais
-    },
-    {
-      path: '/perfil/editar',
-      name: 'editar',
-      component: Editar
-    },
-    {
-      path:'/perfil/informacoesvendas',
-      name: 'informacoesvendas',
-      component: Informacoesvendas
-    },
-    {
-      path: '/perfil/:id?',
+      path: '/perfil',
       name: 'perfil',
       component: Perfil,
       meta: {
         login: true
-      }
+      },
+      children: [
+        {
+          path: 'informacoes',
+          name: 'informacoes',
+          component: InformacoeAdicionais
+        },
+        {
+          path: 'editar',
+          name: 'editar',
+          component: Editar
+        },
+        {
+          path:'informacoesvendas',
+          name: 'informacoesvendas',
+          component: Informacoesvendas
+        }
+      ]
     },
     {
       path: '/compras',
@@ -69,11 +71,6 @@ const router =  new Router({
       path: '/recuperarsenha',
       name: 'recuperarsenha',
       component: Recuperarsenha
-    },
-    {
-      path: '/produto',
-      name: 'produto',
-      component: Produto
     },
     {
       path: '/notifications',

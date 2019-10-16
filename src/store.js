@@ -22,7 +22,7 @@ export default new Vuex.Store({
       state.login = payload;
     },
     UPDATE_MESSAGE_PERFIL(state){
-      state.p_incomplete = "Olá, seu perfil está incompleto, para ter acesso a todas as funcionalidades termine seu cadastro!!!"
+      state.p_incomplete = "Para ter acesso a todas as funcionalidades termine seu cadastro!!!"
     }
   },
   actions: {
