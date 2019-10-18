@@ -24,7 +24,7 @@
                 <v-icon size="28" color="success"></v-icon>
               </v-btn>
             </v-app-bar>
-            <v-container v-if="photo">
+            <v-container v-show="photo">
               <div class="text-center">
                   <h4 class=" subtitle font-weight-regular mb-3 grey--text text--darken-2">Informações de Perfil</h4>
                   <v-responsive>
@@ -49,7 +49,7 @@
                 <v-subheader>CONFIGURAÇÕES DA CONTA</v-subheader>
                 <v-list-item-group>
                  
-                  <v-list-item v-if="usuario.pessoa.length === 0" :to="{name: 'informacoes'}">
+                  <v-list-item v-if="perfil_inc" :to="{name: 'informacoes'}">
                     <v-icon left>person</v-icon>
                     <v-list-item-title right>Concluir Cadastro</v-list-item-title>
                   </v-list-item>
@@ -115,13 +115,11 @@ export default {
   computed: {
     ...mapState(["p_incomplete", "usuario"])
   },
-  created() {
-    setInterval(() => {
+ create() {
       if (this.$store.state.usuario.pessoa.length === 0) {
         this.$store.commit("UPDATE_MESSAGE_PERFIL");
         this.perfil_inc = true;
       }
-    }, 500);
   },
   methods: {
     sair() {

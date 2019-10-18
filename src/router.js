@@ -17,6 +17,7 @@ import Perfilpublico from './views/Perfilpublico'
 
 Vue.use(Router)
 
+
 const router =  new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -38,9 +39,10 @@ const router =  new Router({
       component: Registrar
     },
     {
-      path: '/produto',
+      path: '/produto/:id',
       name: 'produto',
-      component: Produto
+      component: Produto,
+      props: true
     },
     {
       path: '/perfil/:id?',

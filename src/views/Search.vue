@@ -1,6 +1,5 @@
 <template>
   <v-container class="my-auto">
-    
     <div class="hidden-md-and-up">
       <v-row justify="center">
         <v-dialog fullscreen light v-model="dialog" hide-overlay transition="fade-transition">
@@ -46,7 +45,8 @@ export default {
       dialog: true,
       cor:'success'
     }
-  }
+  },
+
 }
 </script>
 

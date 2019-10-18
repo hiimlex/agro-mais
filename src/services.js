@@ -5,7 +5,6 @@ const axiosInstance = Axios.create({
 })
 
 
-
 axiosInstance.interceptors.request.use(
   function(config) {
     const authToken = window.localStorage.token;

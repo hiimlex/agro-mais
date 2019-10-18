@@ -1,5 +1,6 @@
 import { api } from '@/services'
 
+//valida token, mixin created
 export const validaToken = {
   created() {
     if (window.localStorage.token) {
