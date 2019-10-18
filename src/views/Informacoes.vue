@@ -35,9 +35,9 @@
                     <v-card-title class="title font-weight-regular justify-center text-center">
                       <span>Informe qual tipo de conta você deseja criar.</span>
                     </v-card-title>
-                    <v-radio-group v-model="conta" column>
-                      <v-radio color="success" label="Pessoa Física" value="F"></v-radio>
-                      <v-radio color="success" label="Pessoa Jurídica" value="J"></v-radio>
+                    <v-radio-group v-model="pessoa.tipo" column>
+                      <v-radio color="success" label="Pessoa Física" value="pf"></v-radio>
+                      <v-radio color="success" label="Pessoa Jurídica" value="pj"></v-radio>
                     </v-radio-group>
                     </v-container>
                     <v-btn
@@ -56,12 +56,12 @@
                       <span>Informações Pessoais</span>
                     </v-card-title>
                     <!-- Conta fisica -->
-                    <v-form v-if="conta === 'F'">
+                    <v-form v-if="pessoa.tipo === 'pf'">
                       <br>
                       <v-text-field
                       filled
                       shaped
-                      v-model="nome"
+                      v-model="pessoa.nome"
                       type="text"
                       label="Nome completo"
                       color="success"
@@ -73,7 +73,7 @@
                       <v-text-field
                       filled
                       shaped
-                      v-model="cpf"
+                      v-model="pessoa.cpfcnpj"
                       label="CPF"
                       type="number"
                       color="success"
@@ -83,7 +83,7 @@
                       <v-text-field
                       filled
                       shaped
-                      v-model="contato"
+                      v-model="pessoa.contato"
                       label="Contato"
                       color="success"
                       type="number"
@@ -92,12 +92,12 @@
                       ></v-text-field>
                     </v-form>
                     <!-- Conta juridica -->
-                    <v-form v-if="conta === 'J'">
+                    <v-form v-if="pessoa.tipo === 'pj'">
                       <br>
                       <v-text-field
                       filled
                       shaped
-                      v-model="nome"
+                      v-model="pessoa.nome"
                       type="text"
                       label="Nome do responsável"
                       color="success"
@@ -107,7 +107,7 @@
                       <v-text-field
                       filled
                       shaped
-                      v-model="responsavel"
+                      v-model="pessoa.responsavel"
                       type="text"
                       label="Nome Fantasia"
                       color="success"
@@ -117,7 +117,7 @@
                       <v-text-field
                       filled
                       shaped
-                      v-model="cnpj"
+                      v-model="pessoa.cpfcnpj"
                       label="CNPJ"
                       type="number"
                       color="success"
@@ -127,7 +127,7 @@
                       <v-text-field
                       filled
                       shaped
-                      v-model="contato"
+                      v-model="pessoa.contato"
                       label="Contato"
                       color="success"
                       type="number"
@@ -157,7 +157,7 @@
                       shaped
                       filled
                       type="number"
-                      v-model="cep"
+                      v-model="logradouro.cep"
                       label="CEP"
                       hint="Ao digitar seu CEP nós iremos preencher automaticamente os dados abaixo, porém você ainda poderá autalizá-los."
                       color="success"
@@ -167,7 +167,7 @@
                       shaped
                       filled
                       type="text"
-                      v-model="endereco"
+                      v-model="logradouro.endereco"
                       label="Endereço"
                       color="success"
                       required
@@ -176,7 +176,7 @@
                       shaped
                       filled
                       type="text"
-                      v-model="cidade"
+                      v-model="logradouro.cidade"
                       label="Cidade"
                       color="success"
                       required
@@ -185,7 +185,7 @@
                       shaped
                       filled
                       type="text"
-                      v-model="bairro"
+                      v-model="logradouro.bairro"
                       label="Bairro"
                       color="success"
                       required
@@ -194,7 +194,7 @@
                       shaped
                       filled
                       type="text"
-                      v-model="complemento"
+                      v-model="logradouro.complemento"
                       label="Complemento"
                       color="success"
                       ></v-text-field>
@@ -202,17 +202,16 @@
                       shaped
                       filled
                       type="number"
-                      v-model="numero"
+                      v-model="logradouro.numero"
                       label="Número"
                       color="success"
                       required
                       ></v-text-field>
-                        <v-checkbox v-model="exibir" color="success" label="Deseja exibir endereço durante a compra ?" class="ml-1 mt-n4"></v-checkbox>
                     </v-form>
                     <v-btn text class="float-left" @click="e1--">Voltar</v-btn>
                     <v-btn
                       color="success"
-                      @click="e1 = 2"
+                      @click="enviar"
                       class="float-right"
                     >
                       Finalizar
@@ -226,10 +225,13 @@
         </v-dialog>
       </v-row>
     </div>
+
   </v-container>
 </template>
 
 <script>
+import { api } from '@/services'
+
 import { maskcpf,maskcep,maskcnpj,maskcontato } from 'vue-the-mask'
 export default {
   directives:{
@@ -239,21 +241,36 @@ export default {
       return {
         dialog:true,
         e1: 0,
-        conta:'F',
-        nome:null,
-        responsavel:null,
-        cnpj:null,
-        cpf:null,
-        contato:null,
-        cep:null,
-        endereco:null,
-        bairro:null,
-        cidade:null,
-        exibir:false,
-        numero:null,
-        complemento:null
+        pessoa: {
+            nome:null,
+            responsavel:null,
+            cpfcnpj: null,
+            contato:null,
+            tipo:'pf',
+        },
+        logradouro: {
+            cep:null,
+            endereco:null,
+            bairro:null,
+            cidade:null,
+            complemento:null,
+            numero:null,
+            exibir: true,
+
+        }
       }
     },
+    methods:{
+      enviar(){
+        api
+        .post("/registro_pessoa", {
+          "pessoa": this.pessoa,
+          "logradouro": this.logradouro
+        }).then(response => {
+          console.log(response)
+        })
+      }
+    }
 }
 </script>
 

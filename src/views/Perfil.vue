@@ -83,13 +83,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import BottonNavAgro from "./BottonNavAgro";
 import { mapState } from "vuex";
 
-=======
-import BottonNavAgro from './BottonNavAgro'
->>>>>>> origin/master
 export default {
   components: { BottonNavAgro },
 

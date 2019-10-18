@@ -68,7 +68,7 @@
 
 <script>
 import Cards from '../components/Cards'
-import {voltar} from '../services/helpers'
+import {voltar} from '@/helpers'
 import { mask,mask1 } from 'vue-the-mask'
 export default {
   directives:{

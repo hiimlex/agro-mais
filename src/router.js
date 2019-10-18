@@ -12,7 +12,7 @@ import Produto from './views/Produto'
 import Notification from './views/Notifications'
 import Cart from './views/Cart'
 import Search from './views/Search'
-import Informacoesvendas from './views/Informacoesvendas'
+import CadastroProdutor from './views/CadastroProdutor'
 import Perfilpublico from './views/Perfilpublico'
 
 Vue.use(Router)
@@ -38,6 +38,11 @@ const router =  new Router({
       component: Registrar
     },
     {
+      path: '/produto',
+      name: 'produto',
+      component: Produto
+    },
+    {
       path: '/perfil/:id?',
       name: 'perfil',
       component: Perfil,
@@ -54,11 +59,6 @@ const router =  new Router({
           path: 'editar',
           name: 'editar',
           component: Editar
-        },
-        {
-          path:'informacoesvendas',
-          name: 'informacoesvendas',
-          component: Informacoesvendas
         },
         {
           /* pra ter como eu ir, depois tu faz a implementação dos children e me explica. */
@@ -98,7 +98,12 @@ const router =  new Router({
       path:'/anunciar',
       name:'anunciar',
       component: () => import('./views/Anunciar.vue')
-    }
+    },
+    {
+      path:'/cadastro_produtor',
+      name: 'cadastroprodutor',
+      component: CadastroProdutor
+    },
   ]
 })
 
