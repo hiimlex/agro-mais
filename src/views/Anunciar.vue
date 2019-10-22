@@ -136,6 +136,7 @@
               required
               counter
               maxlength="100"
+              no-resize
               ></v-textarea>
             <v-divider></v-divider>
             <v-card-actions>
