@@ -41,10 +41,10 @@ export default {
       const query = serialize(this.$route.query)
       console.log(query)
       if(query){
-        console.log("teste")
-        return `/${query}`
+        console.log(`produtos${query}`)
+        return `produtos${query}`
       }else{
-        return '/'
+        return '/produtos'
       }
     }
   },

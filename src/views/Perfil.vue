@@ -36,7 +36,7 @@
             </v-container>
             <v-container fluid class="mb-5">
               <v-alert
-                v-if="perfil_inc"
+                v-if="p_incomplete"
                 class="white--text"
                 color="success"
                 icon="person"
@@ -47,9 +47,10 @@
               <v-divider></v-divider>
               <v-list class="grey lighten-5">
                 <v-subheader>CONFIGURAÇÕES DA CONTA</v-subheader>
+                
                 <v-list-item-group>
                  
-                  <v-list-item v-if="perfil_inc" :to="{name: 'informacoes'}">
+                  <v-list-item v-if="p_incomplete" :to="{name: 'informacoes'}">
                     <v-icon left>person</v-icon>
                     <v-list-item-title right>Concluir Cadastro</v-list-item-title>
                   </v-list-item>
@@ -66,6 +67,7 @@
               </v-list>
               <v-divider></v-divider>
               <div class="text-center">
+                {{p_incomplete}}
                 <v-btn text @click="sair">SAIR</v-btn>
               </div>
               <br />
@@ -108,19 +110,13 @@ export default {
         },
         { icon: "edit", route: "/perfil/editar", text: "Editar Perfil" }
       ],
-      perfil_inc: false,
       photo: false
     };
   },
   computed: {
     ...mapState(["p_incomplete", "usuario"])
   },
- create() {
-      if (this.$store.state.usuario.pessoa.length === 0) {
-        this.$store.commit("UPDATE_MESSAGE_PERFIL");
-        this.perfil_inc = true;
-      }
-  },
+
   methods: {
     sair() {
       this.$store.dispatch("deslogar").then(response => {

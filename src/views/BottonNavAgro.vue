@@ -18,7 +18,7 @@
         <v-icon center>notifications</v-icon>
       </v-btn>
 
-      <v-btn value="person" to="/perfil">
+      <v-btn value="person" to="/perfil" @click="verifica_perfil">
         <v-icon center>person</v-icon>
       </v-btn>
     </v-bottom-navigation>
@@ -26,11 +26,23 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
   export default {
     data () {
       return {
         logged: true,
       }
     },
+      computed: {
+    ...mapState(["p_incomplete", "usuario"])
+    },
+    methods: {
+      verifica_perfil(){
+        if (this.usuario.pessoa.length === 0) {
+          this.$store.commit("UPDATE_MESSAGE_PERFIL", false);
+      }
+    }
+  }
   }
 </script>
