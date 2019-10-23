@@ -5,21 +5,21 @@
     </v-alert>-->
     <!-- Categorias -->
     <div class="hidden-md-and-up">
-                       <v-text-field
-                  autofocus
-                  placeholder="Buscar"
+    <v-text-field
+      autofocus
+      placeholder="Buscar"
 
-                  color="success"
-                  clearable
-                  outlined
-                  v-model="busca"
-                  @append-icon-cb="buscarProdutos"
-                  
-                >
-                  <template slot="append">
-    <v-icon v-if="busca" color="success" @click.prevent="buscarProdutos">search</v-icon>
-  </template>
-                </v-text-field>
+      color="success"
+      clearable
+      solo
+      rounded
+      v-model="busca"
+      @append-icon-cb="buscarProdutos"
+    >
+      <template slot="append">
+        <v-icon v-if="busca" color="success" @click.prevent="buscarProdutos">search</v-icon>
+      </template>
+    </v-text-field>
       <v-card>
         
         <v-tabs
