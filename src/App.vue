@@ -1,6 +1,7 @@
 <template>
   <v-app class="poppins-font bc-white">
-    <Navbar/>
+    <Navbar class="hidden-sm-and-up"/>
+    <Navbarxl class="hidden-sm-and-down"/>
         <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
             <router-view transition="fade"/>
             
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import Navbarxl from "./components/Navbarxl"
 import { validaToken } from "./mixins";
 import FloatBtn from "./components/Floatbtn";
 import Navbar from "./components/Navbar";
@@ -18,7 +20,7 @@ import BottonNavAgro from "./views/BottonNavAgro";
 import { mapState } from "vuex";
 export default {
   name: "App",
-  components: { Navbar, BottonNavAgro, FloatBtn },
+  components: { Navbar, BottonNavAgro, FloatBtn,Navbarxl },
   mixins: [validaToken]
 };
 </script>
@@ -48,4 +50,5 @@ export default {
   bottom: 12%;
   color: white !important;
 }
+
 </style>

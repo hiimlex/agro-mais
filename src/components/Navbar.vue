@@ -1,8 +1,5 @@
 <template>
   <div id="Navbar" class="my-auto">
-      <div class="display-4 hidden-md-and-down text-center">
-        Plataforma web em construção... utilize seu Smartphone ou Tablet.
-      </div>
       <!-- Mobile -->
       <v-app-bar class="hidden-md-and-up border-botton-grey" elevation="0">
         <v-btn @click="drawer = !drawer" icon text color="white">
@@ -163,7 +160,8 @@ export default {
     produtos:[
       {foto:require('../assets/produto.jpg'),nome:'Uva',quantidade:'3',valor:5.50,id:0}
     ],
-    total:28
+    total:28,
+    busca: null
     
     }
   },

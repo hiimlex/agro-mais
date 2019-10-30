@@ -3,23 +3,23 @@
     <!-- <v-alert v-if="perfil_inc" class="white--text" color="success" icon="person" dismissible prominent dense >
       {{p_incomplete}}
     </v-alert>-->
-    <!-- Categorias -->
+    <!-- Categorias mobile -->
     <div class="hidden-md-and-up">
-    <v-text-field
-      autofocus
-      placeholder="Buscar"
+      <v-text-field
+        autofocus
+        placeholder="Buscar"
 
-      color="success"
-      clearable
-      solo
-      rounded
-      v-model="busca"
-      @append-icon-cb="buscarProdutos"
-    >
-      <template slot="append">
-        <v-icon v-if="busca" color="success" @click.prevent="buscarProdutos">search</v-icon>
-      </template>
-    </v-text-field>
+        color="success"
+        clearable
+        solo
+        rounded
+        v-model="busca"
+        @append-icon-cb="buscarProdutos"
+      >
+        <template slot="append">
+          <v-icon v-if="busca" color="success" @click.prevent="buscarProdutos">search</v-icon>
+        </template>
+      </v-text-field>
       <v-card>
         
         <v-tabs
