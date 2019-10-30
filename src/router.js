@@ -10,10 +10,10 @@ import Editar from './views/Editar'
 import Recuperarsenha from './views/Recuperarsenha'
 import Produto from './views/Produto'
 import Notification from './views/Notifications'
-import Cart from './views/Cart'
 import Search from './views/Search'
 import CadastroProdutor from './views/CadastroProdutor'
 import Perfilpublico from './views/Perfilpublico'
+import Checkout from './views/Checkout'
 
 Vue.use(Router)
 
@@ -87,9 +87,9 @@ const router =  new Router({
       component: Notification
     },
     {
-      path: '/cart',
-      name: 'cart',
-      component: Cart
+      path: '/checkout',
+      name: 'checkout',
+      component: Checkout,
     },
     {
       path: '/search',

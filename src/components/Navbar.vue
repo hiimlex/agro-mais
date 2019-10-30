@@ -127,7 +127,7 @@
           <v-list-item-action>
             <div class="d-flex">
               <v-btn class="mr-5">Limpar</v-btn>
-              <v-btn color="success" to="cart">Finalizar</v-btn>              
+              <v-btn color="success" to="checkout">Comprar</v-btn>              
             </div>
           </v-list-item-action>
         </v-list-item>
