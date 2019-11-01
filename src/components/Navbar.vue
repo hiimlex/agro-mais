@@ -78,7 +78,7 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-content>
-              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus beatae, veniam numquam a impedit quisquam quis odit deleniti dolores ad distinctio repellat! Temporibus ducimus rem ratione sapiente. Commodi, atque?</p>
+              <p class="text-justify">O Agro+Classificados visa auxiliar as atividades de exposição e vendas dos produtos de pequenos agricultores e pecuaristas, tendo em vista que, com frequência, a exposição dos seus produtos limitam-se apenas às feiras livres ou eventos não permanentes. Além disso, o número de clientes que visitam tais feiras é limitado a uma pequena região geográfica, geralmente de moradores de bairros ou cidades circunvizinhas.</p>
             </v-list-item-content>
           </v-list-item>
         </v-list>

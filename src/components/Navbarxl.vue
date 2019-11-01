@@ -1,7 +1,7 @@
 <template>
   <div id="Navbar" class="my-auto">
       <!-- Desktop -->
-      <div class="hidden-md-and-down">
+      <div class="hidden-sm-and-down">
         <v-toolbar class="pa-2" elevation="2">
           <router-link to="/" class="router-bar"><v-toolbar-title class="logo">Agro+</v-toolbar-title></router-link>
 

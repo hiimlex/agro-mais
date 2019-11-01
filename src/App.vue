@@ -18,6 +18,7 @@ import FloatBtn from "./components/Floatbtn";
 import Navbar from "./components/Navbar";
 import BottonNavAgro from "./views/BottonNavAgro";
 import { mapState } from "vuex";
+
 export default {
   name: "App",
   components: { Navbar, BottonNavAgro, FloatBtn,Navbarxl },
