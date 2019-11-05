@@ -1,8 +1,8 @@
 <template>
   <v-app class="poppins-font bc-white">
-    <Navbar class="hidden-sm-and-up"/>
+    <Navbar class="hidden-md-and-up"/>
     <Navbarxl class="hidden-sm-and-down"/>
-        <v-content class="grey lighten-5 justify-content-center" transition="fade-transition">
+        <v-content class="grey lighten-4 justify-content-center" transition="fade-transition">
             <router-view transition="fade"/>
             
             <FloatBtn class="hidden-md-and-up"/>

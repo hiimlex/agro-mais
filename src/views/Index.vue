@@ -49,7 +49,7 @@
       </v-row>
     </div>
   </v-container>
-  <v-container fluid class="my-auto grey lighten-3" transition="fade-transition">
+  <v-container fluid class="my-auto grey lighten-2" transition="fade-transition">
             <v-row class="justify-center">
                 <v-col md="10" xl="12">
                     <h3 class="text-center">EQUIPE RESPONSÁVEL
