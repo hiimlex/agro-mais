@@ -28,6 +28,10 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+
+html {
+  overflow: hidden !important;
+}
 .poppins-font {
   font-family: "Poppins", sans-serif !important;
 }
